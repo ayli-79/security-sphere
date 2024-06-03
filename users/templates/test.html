@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Тестирование{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/Test.css' %}">
+    
+</head>
+<article>
+<div class="container">
+    <form id="testForm" method="post" action="{% url 'submit_test' %}">
+        {% csrf_token %}
+        <div class="content">
+            <div class="block">
+
+        
+            </div>
+            <div class="vopros">
+                <p>1. Какое слово пропущено?</p>
+                <p>... от производства труб может содержать опасные вещества, такие как кремнезем и металлы, которые могут вызвать респираторные заболевания.</p><br>
+                <div class="otvet">
+                    <label><input type="radio" name="question1" value="Сварочные газы"> Сварочные газы</label><br>
+                    <label><input type="radio" name="question1" value="Растворители"> Растворители</label><br>
+                    <label><input type="radio" name="question1" value="Пыль"> Пыль</label><br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="block"></div>
+            <div class="vopros">
+                <p>2. Что относится к эргономическим опасностям?</p><br><br><br>
+                <div class="otvet">
+                    <label><input type="radio" name="question2" value="Электричество, вибрация, освещение"> Электричество, вибрация, освещение</label><br>
+                    <label><input type="radio" name="question2" value="Поднятие тяжестей, повторяющиеся движения, неудобные позы"> Поднятие тяжестей, повторяющиеся движения, неудобные позы</label><br>
+                    <label><input type="radio" name="question2" value="Стресс, усталость"> Стресс, усталость</label><br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="block"></div>
+            <div class="vopros">
+                <p>3. О какой физической опасности идёт речь?</p>
+                <p>Недостаточное ... может привести к несчастным случаям, таким как порезы, ушибы и столкновения.</p><br><br>
+                <div class="otvet">
+                    <label><input type="radio" name="question3" value="Электричество"> Электричество</label><br>
+                    <label><input type="radio" name="question3" value="Температура"> Температура</label><br>
+                    <label><input type="radio" name="question3" value="Освещение"> Освещение</label><br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="block"></div>
+            <div class="vopros">
+                <p>4. Эффективны ли одноразовые респираторы против газов или паров?</p><br><br><br>
+                <div class="otvet">
+                    <label><input type="radio" name="question4" value="Одноразовые респираторы эффективны против пыли, тумана, газов и паров."> Одноразовые респираторы эффективны против пыли, тумана, газов и паров.</label><br><br>
+                    <label><input type="radio" name="question4" value="Одноразовые респираторы эффективны против пыли и тумана, но не против газов или паров."> Одноразовые респираторы эффективны против пыли и тумана, но не против газов или паров.</label><br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="block"></div>
+            <div class="vopros">
+                <p>5. Как необходимо хранить горючие материалы (бумага, древесина, химические вещества)?</p><br><br><br>
+                <div class="otvet">
+                    <label><input type="radio" name="question5" value="В специально отведенных и хорошо проветриваемых помещениях."> В специально отведенных и хорошо проветриваемых помещениях.</label><br>
+                    <label><input type="radio" name="question5" value="Для безопасного хранения не следует использовать одобренные контейнеры"> Для безопасного хранения не следует использовать одобренные контейнеры</label><br>
+                    <label><input type="radio" name="question5" value="Можно хранить рядом с источником тепла"> Можно хранить рядом с источником тепла</label><br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="block"></div>
+            <div class="vopros">
+                <p>6. О какой системе пожаротушения идёт речь?</p>
+                <p>Небольшие переносные устройства, заполненные огнетушащим веществом, таким как вода, пена или углекислый газ. Они используются для тушения небольших пожаров на ранних стадиях.</p><br><br>
+                <div class="otvet">
+                    <label><input type="radio" name="question6" value="Портативные огнетушители"> Портативные огнетушители</label><br>
+                    <label><input type="radio" name="question6" value="Пенные системы"> Пенные системы</label><br>
+                    <label><input type="radio" name="question6" value="Газовые системы"> Газовые системы</label><br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="block"></div>
+            <div class="vopros">
+                <p>7. О каком средстве индивидуальной защиты идёт речь?</p>
+                <p>... предотвращают контакт кожи с опасными химическими веществами, нагретыми поверхностями и острыми предметами.</p><br><br>
+                <div class="otvet">
+                    <label><input type="radio" name="question7" value="Защитные каски"> Защитные каски</label><br>
+                    <label><input type="radio" name="question7" value="Защитные перчатки"> Защитные перчатки</label><br>
+                    <label><input type="radio" name="question7" value="Защитные очки"> Защитные очки</label><br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="block"></div>
+            <div class="vopros">
+                <p>8. О каком средстве индивидуальной защиты идёт речь?</p>
+                <p>... уменьшают воздействие шума, предотвращая повреждение слуха.</p><br><br>
+                <div class="otvet">
+                    <label><input type="radio" name="question8" value="Защитные очки"> Защитные очки</label><br>
+                    <label><input type="radio" name="question8" value="Защитные каски"> Защитные каски</label><br>
+                    <label><input type="radio" name="question8" value="Защитники органов слуха"> Защитники органов слуха</label><br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="block"></div>
+            <div class="vopros">
+                <p>9. Должны ли сотрудники знать альтернативные пути эвакуации?</p><br><br><br>
+                <div class="otvet">
+                    <label><input type="radio" name="question9" value="Должны, на случай, если их основной путь будет заблокирован."> Должны, на случай, если их основной путь будет заблокирован.</label><br><br>
+                    <label><input type="radio" name="question9" value="Не должны"> Не должны</label><br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="block"></div>
+            <div class="vopros">
+                <p>10. Могут ли все эвакуированные сотрудники собраться во вторичном месте сбора?</p><br><br><br>
+                <div class="otvet">
+                    <label><input type="radio" name="question10" value="Могут"> Могут</label><br>
+                    <label><input type="radio" name="question10" value="Не могут"> Не могут</label><br>
+                    <label><input type="radio" name="question10" value="Могут, если основное место сбора недоступно."> Могут, если основное место сбора недоступно.</label><br>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="form__btn form__btn_submit">Завершить тестирование</button>
+        </div>
+
+    </form>
+</div>
+</article>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Сфера безопасности{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/mvdstyle.css' %}">
+</head>
+<article>
+<div class="container">
+    <h2>Библиотека</h2>
+    <hr>
+    <a href="{% url 'valcovka' %}"><div class="image-content">
+        <img src="{% static 'img/опасность.jpg' %}" class="img">
+            <div class="overlay">
+            <div class="text"><h1>&#10148;</h1></div>
+            </div>
+            <div class="signature">Опасности и риски на производстве<hr>
+                <p class="description">Опасности и риски, связанные с производством труб, могут включать в себя возможность получения травмы при работе с оборудованием или контакт с опасными веществами.</p></div>
+        </div>
+    </a>    
+
+    <a href="{% url 'sredstva' %}"><div class="image-content">
+        <img src="{% static 'img/защита.jpg' %}" class="img">
+        <div class="overlay">
+            <div class="text"><h1>&#10148;</h1></div>
+        </div>
+        <div class="signature">Индивидуальные средства защиты<hr>
+            <p class="description">Использование индивидуальных средств защиты необходимо для обеспечения безопасности работников на производстве.</p></div>
+    </div>
+    </a>
+
+    <a href="{% url 'fire' %}"><div class="image-content">
+        <img src="{% static 'img/огонь.jpg' %}" class="img">
+        <div class="overlay">
+            <div class="text"><h1>&#10148;</h1></div>
+        </div>
+        <div class="signature">Пожарная безопасность<hr>
+            <p class="description">Пожарная безопасность важна для предотвращения пожаров на производстве и требует соблюдения специальных мер, таких как регулярная проверка оборудования и проведение пожарных учений.</p></div>
+    </div> 
+    </a>
+
+    <a href="{% url 'chs' %}"><div class="image-content">
+        <img src="{% static 'img/выход.jpg' %}" class="img">
+        <div class="overlay">
+            <div class="text"><h1>&#10148;</h1></div>
+        </div>
+        <div class="signature">Процедуры эвакуации и действия в ЧС<hr>
+            <p class="description">Процедуры эвакуации и действия в чрезвычайных ситуациях помогают обеспечить безопасность всех сотрудников и клиентов производственного предприятия в случае возникновения чрезвычайных ситуаций.</p></div>
+    </div> 
+    </a>
+</div>
+
+<div class="aside">
+    <div class="menu"><h2>Меню</h2>
+    <hr>
+    </div>
+    <div class="buttons">
+        
+        <a href="{% url 'test' %}" class="click">    <img src="{% static 'icon/тест.png' %}" class="icon_img1">Тестирование</a>
+        <a href="{% url 'video' %}" class="click"> <img src="{% static 'img/вид.png' %}" class="icon_img1">Видео-уроки</a>
+    </div>
+</div>
+</article>
+{% endblock %}

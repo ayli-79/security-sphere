@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Сфера безопасности{% endblock %}</title>
+
+    <link rel="icon" href="{% static 'icon/щит.png' %}">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="{% url 'mvd' %}"><img class="img-logo" src="{% static 'img/киберсталь.png' %}" alt="картинка">
+        </a>
+        <a href="{% url 'mvd' %}"><h3>СФЕРА БЕЗОПАСНОСТИ</h3></a>
+    </div>
+    <div class="user-info">
+        {% if user.is_authenticated %}
+            <span>{{ user.first_name }} {{ user.last_name }} {{ user.patronymic }}</span>
+            <a href="{% url 'logout' %}"><img class="icon_img2" src="{% static 'icon/выход.png' %}" alt="картинка">Выход</a>
+        {% else %}
+            <!-- <a href="{% url 'register_login' %}">Вход</a> -->
+        {% endif %}
+    </div>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+
+</body>
+</html>

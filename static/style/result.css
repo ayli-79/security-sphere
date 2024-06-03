@@ -1,0 +1,46 @@
+.form__btn {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000;
+}
+
+.form__btn_submit {
+    margin-top: 20px;
+}
+
+.form__btn_again {
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+
+    color: #000;
+    background-color: #ffcc00;
+    padding: 10px 20px;
+}
+.certificate {
+    margin-top: 20px;
+
+}
+
+.certificate img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.certificate a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.certificate a:hover {
+    background-color: #45a049;
+}

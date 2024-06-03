@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Регистрация/Вход{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/reg.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+<article class="container">
+    <div class="block">
+        <section class="block__item block-item">
+            <h2 class="block-item__title">У вас уже есть аккаунт?</h2>
+            <button class="block-item__btn signin-btn">Войти</button>
+        </section>
+        <section class="block__item block-item">
+            <h2 class="block-item__title">У вас нет аккаунта?</h2>
+            <button class="block-item__btn signup-btn">Зарегистрироваться</button>
+        </section>
+    </div>
+
+    <div class="form-box">
+        <form method="post" class="form form_signin">
+            {% csrf_token %}
+            <h3 class="form__title">Вход</h3>
+            <div class="form-group">
+                <label for="id_username">Логин</label>
+                <input type="text" id="id_username" name="username" class="form__input">
+            </div>
+            <div class="form-group">
+                <label for="id_password">Пароль</label>
+                <input type="password" id="id_password" name="password" class="form__input">
+            </div>
+            <button class="form__btn" name="login">Войти</button>
+        </form>
+
+        <form method="post" class="form form_signup">
+            {% csrf_token %}
+            <h3 class="form__title">Регистрация</h3>
+            <div class="form-group">
+                <label for="id_first_name">Имя</label>
+                <input type="text" id="id_first_name" name="first_name" class="form__input" >
+            </div>
+            <div class="form-group">
+                <label for="id_last_name">Фамилия</label>
+                <input type="text" id="id_last_name" name="last_name" class="form__input">
+            </div>
+            <div class="form-group">
+                <label for="id_patronymic">Отчество</label>
+                <input type="text" id="id_patronymic" name="patronymic" class="form__input">
+            </div>
+            <div class="form-group">
+                <label for="id_username_reg">Логин</label>
+                <input type="text" id="id_username_reg" name="username" class="form__input">
+            </div>
+            <div class="form-group">
+                <label for="id_password1">Пароль</label>
+                <input type="password" id="id_password1" name="password1" class="form__input">
+            </div>
+            <div class="form-group">
+                <label for="id_password2">Подтверждение пароля</label>
+                <input type="password" id="id_password2" name="password2" class="form__input">
+            </div>
+            <button class="form__btn form__btn_signup" name="signup">Зарегистрироваться</button>
+        </form>
+    </div>
+</article>
+{% endblock %}

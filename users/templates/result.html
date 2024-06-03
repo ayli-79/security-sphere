@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Результаты тестирования{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/mvdstyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style/result.css' %}">
+</head>
+<div class="container">
+    <h2>Результаты тестирования</h2>
+    <p>Вы правильно ответили на {{ score }} из {{ total_questions }} вопросов.</p>
+    <p>Ваш результат: {{ percentage }}%</p>
+
+    {% if certificate %}
+    <div class="certificate">
+        <p>Поздравляем! Вы успешно прошли тест!</p>
+        <img src="{% static 'images/certificate.png' %}" alt="Certificate">
+        <p><a href="{% static 'files/certificate.pdf' %}" download>Скачать сертификат</a>
+    </div>
+    {% endif %}
+
+    <a href="{% url 'test' %}" class="form__btn form__btn_again">Пройти тест снова</a>
+</div>
+{% endblock %}
